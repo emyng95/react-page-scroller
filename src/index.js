@@ -30,7 +30,6 @@ const containers = [];
 
 const ReactPageScroller = ({
   animationTimer,
-  backgroundColor,
   blockScrollDown,
   blockScrollUp,
   children,
@@ -326,7 +325,6 @@ const ReactPageScroller = ({
           height: "100%",
           width: "100%",
           transition: `transform ${animationTimer}ms ${transitionTimingFunction}`,
-          background: backgroundColor,
         }}
         tabIndex={0}
       >
@@ -338,7 +336,6 @@ const ReactPageScroller = ({
 
 ReactPageScroller.propTypes = {
   animationTimer: PropTypes.number,
-  backgroundColor: PropTypes.string,
   blockScrollDown: PropTypes.bool,
   blockScrollUp: PropTypes.bool,
   children: PropTypes.any,
