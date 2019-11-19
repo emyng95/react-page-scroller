@@ -10,6 +10,7 @@ if (!global._babelPolyfill) {
 
 const DEFAULT_ANIMATION_TIMER = 1000;
 const DEFAULT_ANIMATION = "ease-in-out";
+const DEFAULT_BACKGROUND = "#ffffff";
 const DEFAULT_CONTAINER_HEIGHT = "100vh";
 const DEFAULT_CONTAINER_WIDTH = "100vw";
 const DEFAULT_COMPONENT_INDEX = 0;
@@ -29,6 +30,7 @@ const containers = [];
 
 const ReactPageScroller = ({
   animationTimer,
+  backgroundColor,
   blockScrollDown,
   blockScrollUp,
   children,
@@ -324,6 +326,7 @@ const ReactPageScroller = ({
           height: "100%",
           width: "100%",
           transition: `transform ${animationTimer}ms ${transitionTimingFunction}`,
+          background: backgroundColor,
         }}
         tabIndex={0}
       >
@@ -335,6 +338,7 @@ const ReactPageScroller = ({
 
 ReactPageScroller.propTypes = {
   animationTimer: PropTypes.number,
+  backgroundColor: PropTypes.string,
   blockScrollDown: PropTypes.bool,
   blockScrollUp: PropTypes.bool,
   children: PropTypes.any,
@@ -349,6 +353,7 @@ ReactPageScroller.propTypes = {
 
 ReactPageScroller.defaultProps = {
   animationTimer: DEFAULT_ANIMATION_TIMER,
+  backgroundColor: DEFAULT_BACKGROUND,
   transitionTimingFunction: DEFAULT_ANIMATION,
   containerHeight: DEFAULT_CONTAINER_HEIGHT,
   containerWidth: DEFAULT_CONTAINER_WIDTH,
